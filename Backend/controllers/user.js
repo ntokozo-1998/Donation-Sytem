@@ -13,7 +13,7 @@ const db = new Pool({
     host: 'localhost',  //Database host
     database: 'freelance_db', //Database database
     password: 'admin12345', //Database password
-    port: 5433//Database port
+    port: 5432//Database port
   });
 
   const defaultImage = "https://res.cloudinary.com/dev-lab/image/upload/v1668614930/user_c0tzhg.png";

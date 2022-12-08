@@ -7,7 +7,7 @@ const db = new Pool({
     host: 'localhost',  //Database host
     database: 'freelance_db', //Database database
     password: 'admin12345', //Database password
-    port: 5433//Database port
+    port: 5432//Database port
   });
 
   const sender =  "dev-lab.com@outlook.com";
