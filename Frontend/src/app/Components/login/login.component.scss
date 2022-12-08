@@ -1,0 +1,91 @@
+
+.header {
+    background-color :#0D4862;
+    padding: 5px;
+    border-radius: 5px 5px 0px 0px;    
+    & .header-div
+    {
+        margin: auto;
+        & p{
+            text-align:center ;
+            color: rgb(255, 255, 255);
+            font-size: larger;
+            font-weight: bold;
+            width: 100%;
+            align-items: center;
+        }
+    }
+  }
+  .slogan{
+    text-align: center;
+    margin-top: -25px;
+    
+}
+  .intro{
+    padding-top: 1.9rem;
+    text-align: center;
+}
+ 
+.btn{
+    width: 50%;
+    transition: 500ms;
+    color: #0D4862;
+    background-color:#F1F1F1 ;
+    align-items: center;
+    align-self: center;    
+    display: flex;
+    margin-left: 100px;
+    text-align: center;
+}
+.btn:hover{
+        //background-color: transparent;
+        border: 1px solid#0D4862;
+       // transform: scale(1.015);
+        color: #0D4862;
+        font-weight: 700;
+}
+.links
+{
+    & a{
+        text-decoration: none;
+        color: black;
+        transition: 300ms;
+    }
+
+}
+a:hover
+ {
+        cursor: pointer;
+        font-size: 15px;
+        color: #0D4862; 
+}
+.form-div
+{
+    background-color: #F1F1F1;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.header span{
+    background-color:#E18E11;
+    padding: 10px;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+}
+.container-fluid span{
+    background-color: #E18E11;
+    padding: 10px;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+}
+.page{
+    background-color: #0D4862;
+    height: 100vh;
+}
+p{
+    color: #F1F1F1;
+    text-align: center;
+}
+.form-label{
+    color: #F1F1F1;   
+}

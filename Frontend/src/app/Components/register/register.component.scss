@@ -1,0 +1,108 @@
+
+.header {
+    background-color :#0D4862;
+    padding: 5px;
+    border-radius: 5px 5px 0px 0px;    
+    & .header-div
+    {
+        margin: auto;
+        & p{
+            text-align:center ;
+            color: #F1F1F1;
+            font-size: larger;
+            font-weight: bold;
+            width: 100%;
+            align-items: center;
+        }
+    }
+  }
+  
+  .btn{
+    width: 50%;
+    color: rgb(6, 1, 1);
+    background-color:#F1F1F1;  
+    margin-left: 90px;
+    text-align: center;
+    padding: 4px;
+  }
+  .btn:hover{
+
+        border: 1px solid #0D4862;
+        color:#0D4862;
+        font-weight: 700px;
+  }
+  .links
+  {
+    & a{
+        text-decoration: none;
+        color: black;
+        transition: 300ms;
+    }
+  
+  }
+  a:hover
+  {
+        cursor: pointer;
+        font-size: 15px;
+        color: #0D4862;
+  }
+  .form-div
+  {
+    background-color: #F1F1F1;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  
+  .label-center
+  {
+    align-items: center;
+  }
+  .slogan{
+    text-align: center;
+    margin-top: -25px;
+    
+  }
+  .intro{
+    padding-top: 1.9rem;
+    text-align: center;
+  }
+  
+  .header span{
+    background-color:#0D4862;
+    padding: 10px;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+  }
+  .container-fluid span{
+    background-color: #E18E11;
+    padding: 10px;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+  }
+  .img{
+    size: 2px;
+    margin-left: 100px;
+  }
+  .body{
+    background-color: #0D4862;
+  }
+  .form-label{
+    color: white;
+  }
+  
+  p{
+    color: #F1F1F1;
+    text-align: center;
+    size: 80px;
+  }
+  .form-check-label{
+    color: #F1F1F1;
+  }
+  .account{
+    color: #F1F1F1;
+    text-align: center;
+  }
+  .p{
+    color: #F1F1F1;
+  }
+  
