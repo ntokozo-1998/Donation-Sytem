@@ -16,6 +16,7 @@
             <form class="form" id="formRegister" [formGroup]="registerForm" (ngSubmit)="onRegister(registerForm)">    
                 <div class="container-fluid mb-3 col-lg-8">
                   <label for="Name" class="form-label">First Name</label>
+          
                   <div class="input-group mb-3">
                     <input type="text" class="form-control" aria-label="Name" aria-describedby="addon-wrapping" formControlName="name" minlength="2" required>
                     <span><i class="bi bi-person-fill"></i></span> 
@@ -49,15 +50,6 @@
                   </div>
                   
                 </div>
-                
-                  
-                  <div class="container-fluid mb-3 col-lg-8">
-                    <label for="Username" class="form-label">Username</label>
-                    <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" formControlName="username" minlength="2" required>
-                      <span><i class="bi bi-person-fill"></i></span> 
-                    </div>
-                  </div> 
 
                   <div class="container-fluid mb-3 col-lg-8">
                     <label for="Email" class="form-label">Email</label>
@@ -88,7 +80,7 @@
                   </div>
                   
                     <div class="links">
-                      <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+                      <!-- <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p> -->
                       <p class="small fw-bold mt-2 pt-1 mb-0 text-center">Already have an account? <a href="" class="link" routerLink="/login" >Login</a></p>
                     </div>
             

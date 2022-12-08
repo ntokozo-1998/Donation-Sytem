@@ -1,16 +1,18 @@
-import { TestBed } from '@angular/core/testing';
+import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
-import { UserService } from './user.service';
+@Injectable({
+  providedIn: 'root'
+})
+export class JwtService {
 
-describe('UserService', () => {
-  let service: UserService;
+  private helper = new JwtHelperService();
+  
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(UserService);
-  });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+  constructor() { }
+  
+  getData(token: string)
+  { 
+    return this.helper.decodeToken(token);
+  }
+}

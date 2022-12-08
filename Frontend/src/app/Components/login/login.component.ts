@@ -2,12 +2,14 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgToastModule, NgToastService } from 'ng-angular-popup';
 //import { JwtHelperService } from '@auth0/angular-jwt';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { NgToastService } from 'ng-angular-popup';
+import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/service/auth.service';
 import { JwtService } from 'src/app/service/jwt.service';
+
 
 @Component({
   selector: 'app-login',
@@ -23,8 +25,9 @@ export class LoginComponent implements OnInit {
   });
 
 
-  constructor(private authService: AuthService,private toast: NgToastService,private router:Router,private jwt :JwtService,private spinner: NgxSpinnerService) { }
+  //constructor(private authService: AuthService,private toastr:ToastrService,private router:Router,private jwt :JwtService,private spinner: NgxSpinnerService) { }
  
+  constructor(private authService: AuthService, private toast : NgToastService,private router:Router,private jwt :JwtService,private spinner: NgxSpinnerService){}
 
   ngOnInit(): void {
 
@@ -36,14 +39,15 @@ export class LoginComponent implements OnInit {
 
     //   this.router.navigateByUrl('/donee');
     // }
-    // setTimeout(() => {
-    //   /** spinner ends after 5 seconds */
-    //   this.spinner.hide();
-    // }, 1000);
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 1000);
   }
 
   onLogin(form : FormGroup)
   {
+    
     
     this.spinner.show();
         setTimeout(() => {
@@ -57,6 +61,7 @@ export class LoginComponent implements OnInit {
         
 
         const {email,name,username,surname,account,user_id} = this.jwt.getData(data.token);
+        console.log(this.jwt.getData(data.token));
         localStorage.setItem('account', account);
         localStorage.setItem('email',email);
         localStorage.setItem('username',username);
@@ -64,18 +69,21 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('name',name);
         localStorage.setItem('user_id',user_id);
 
-        if(account =="Donee") //route to relevent page
+        if(account =="Donor") //route to relevent page
         {
-          this.toast.success({detail:'Succesful', summary: 'Welcome '+name});
-          this.router.navigateByUrl('/doneet');
-        }else if(this.jwt.getData(data.token).account =="donor") //route to relevent page
-        {
-          this.toast.success({detail:'Succesful', summary:'Welcome '+name});
+          this.toast.success({detail: "Welcome "+name, summary:'successfully logged in'});
           this.router.navigateByUrl('/donor');
+        }else if(this.jwt.getData(data.token).account =="Donee") //route to relevent page
+        {
+          this.toast.success({detail:"Welcome "+name, summary:'successfully logged in'});
+          this.router.navigateByUrl('/donee');
         } 
 
     },(error:HttpErrorResponse)=>{
-      this.toast.error(error.error.message);
+      this.toast.warning({detail:"Warning "+name, summary:'you entered wrong details'});
+
+
+      console.log(error)
     })
     )    
   }

@@ -1,9 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/service/auth.service';
 
@@ -13,11 +14,12 @@ import { AuthService } from 'src/app/service/auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+[x: string]: any;
 
   private subscriptions : Subscription[] = [];
 
-  registerForm = new FormGroup({
-    username: new FormControl(),
+  registerForm:FormGroup = new FormGroup({
+    username: new FormControl('', [ Validators.required, Validators.minLength(3),Validators.maxLength(50) ]),
     password: new FormControl(),
     email: new FormControl(),
     name: new FormControl('',[Validators.required,Validators.pattern('^[a-zA-Z ]*$')]),
@@ -26,14 +28,32 @@ export class RegisterComponent implements OnInit {
     account: new FormControl()
   });
 
-  constructor(private authService: AuthService, private router: Router,private toast: NgToastService,private spinner:NgxSpinnerService) { }
+  submitted=false;
+
+  constructor(private authService: AuthService, private router: Router,private toast : NgToastService,private spinner:NgxSpinnerService, private fb:FormBuilder) { }
+
+  myForm() {
+    this.registerForm = this.fb.group({
+      username: ['', [ Validators.required, Validators.minLength(3),Validators.maxLength(50) ]],
+      email: ['', [Validators.required, Validators.email]],
+      name:  ['', [ Validators.required, Validators.minLength(10),Validators.maxLength(10)]],
+      password:  ['', [ Validators.required ]],
+      confirmPassword:  ['', [ Validators.required ]],
+      account:  ['', [ Validators.required ]]
+    });
+  }
 
   ngOnInit(): void {
+    this.myForm;
     this.spinner.show();
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
     }, 1000);
+  }
+
+  get formValidation(): { [key: string]: AbstractControl } {
+    return this.registerForm.controls;
   }
 
   onRegister(form : FormGroup)
@@ -45,14 +65,14 @@ export class RegisterComponent implements OnInit {
         this.subscriptions.push(
           this.authService.register(form.value).subscribe((response:any)=>{
             this.router.navigateByUrl('/login');
-            this.toast.success({detail:'succesful', summary:'Welcome to Change World'+form.value.name+'!'});
+            this.toast.success({detail:"Successful ", summary:'Your account is now created'});// form.value.name+"!"});
           },(error:HttpErrorResponse)=>{
-            this.toast.error({detail:'erro', summary:(JSON.stringify(error.error.message))});
+            this.toast.warning({detail:"Warning ", summary:'please enter correct details'});
             console.log(error)
           })
         )
       }else{
-        this.toast.warning({detail:'warning', summary: 'Passwords do not match'})
+        this.toast.warning({detail:"Welcome ", summary:'welcome'});
       }
     }
 

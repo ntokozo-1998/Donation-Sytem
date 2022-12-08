@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import * as path from 'path';
 import { DoneeComponent } from './Components/donee/donee.component';
 import { DonorComponent } from './Components/donor/donor.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -19,12 +20,11 @@ const routes: Routes = [
   {path : 'home' , component : HomeComponent},
   {path : 'profile' , component : ProfileComponent},
   {path : 'track' , component : TrackComponent},
-];
+]
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-  
- }
+export class AppRoutingModule { }

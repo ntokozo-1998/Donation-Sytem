@@ -1,16 +1,18 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from "@auth0/angular-jwt";
+import { HttpClient } from '@angular/common/http';
+import { FormGroup } from '@angular/forms';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
   api = 'http://localhost:8080/api';
   token !: string;
   loggedInUsername !: string;
-  jwtHelper = new JwtHelperService;
+  jwtHelper = new JwtHelperService();
 
   constructor(private http: HttpClient) { }
 
@@ -25,10 +27,6 @@ export class AuthService {
   saveToken(token : string): void
   {
     this.token = token;
-    sessionStorage.setItem('token',token);
-  }
-
-  forgotPassword(data: any) {
-    return this.http.post(this.api+'/forgotPassword',data);
+    localStorage.setItem('token',token);
   }
 }
