@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   private subscriptions : Subscription[] = [];
 
   registerForm:FormGroup = new FormGroup({
-    username: new FormControl('', [ Validators.required, Validators.minLength(3),Validators.maxLength(50) ]),
+    //username: new FormControl('', [ Validators.required, Validators.minLength(3),Validators.maxLength(50) ]),
     password: new FormControl(),
     email: new FormControl(),
     name: new FormControl('',[Validators.required,Validators.pattern('^[a-zA-Z ]*$')]),
@@ -32,19 +32,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router,private toast : NgToastService,private spinner:NgxSpinnerService, private fb:FormBuilder) { }
 
-  myForm() {
-    this.registerForm = this.fb.group({
-      username: ['', [ Validators.required, Validators.minLength(3),Validators.maxLength(50) ]],
-      email: ['', [Validators.required, Validators.email]],
-      name:  ['', [ Validators.required, Validators.minLength(10),Validators.maxLength(10)]],
-      password:  ['', [ Validators.required ]],
-      confirmPassword:  ['', [ Validators.required ]],
-      account:  ['', [ Validators.required ]]
-    });
-  }
-
   ngOnInit(): void {
-    this.myForm;
     this.spinner.show();
     setTimeout(() => {
       /** spinner ends after 5 seconds */
@@ -58,21 +46,24 @@ export class RegisterComponent implements OnInit {
 
   onRegister(form : FormGroup)
   {
+
+    
     if(form.valid)
     {
+      console.log("im here")
       if(form.value.confirmPassword == form.value.password)
       {
         this.subscriptions.push(
           this.authService.register(form.value).subscribe((response:any)=>{
             this.router.navigateByUrl('/login');
-            this.toast.success({detail:"Successful ", summary:'Your account is now created'});// form.value.name+"!"});
+            this.toast.success({detail:"Welcome ", summary:(+form.value.name+'!')});// form.value.name+"!"});
           },(error:HttpErrorResponse)=>{
-            this.toast.warning({detail:"Warning ", summary:'please enter correct details'});
+            this.toast.error({detail:"Warning ", summary:JSON.stringify(error.error.message)});
             console.log(error)
           })
         )
       }else{
-        this.toast.warning({detail:"Welcome ", summary:'welcome'});
+        this.toast.warning({detail:"Warning ", summary:'sswords do not match'});
       }
     }
 

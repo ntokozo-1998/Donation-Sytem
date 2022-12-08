@@ -26,14 +26,14 @@ export class NavComponent implements OnInit {
 
   checkAccount(): boolean {
     
-    if(localStorage.getItem('account') == "Freelancer")
+    if(localStorage.getItem('account') == "Donor")
     {
 
-      this.dashboardRoute = '/freelancer';
+      this.dashboardRoute = '/Donor';
       return true;
     }else
     {
-      this.dashboardRoute = '/client';
+      this.dashboardRoute = '/Donee';
       return false;
     }
     
