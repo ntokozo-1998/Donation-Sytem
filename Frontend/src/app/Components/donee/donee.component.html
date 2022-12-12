@@ -1,3 +1,59 @@
-<p>WELCOME TO DONEE PLATFORM</p>
+<div class = "container">
 
-<button type="button" class="btn btn-primary" routerLink="/home">Logout</button>
+    <div class = "heading">
+      Donee Platform
+    </div>
+  <br>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 justify-content-center">
+    <div class="col mb-4">
+      
+        <div class="card">
+            <i class="bi bi-laptop"></i>
+            <div class="card-body">
+              <h5 class="card-title">Donation Posted</h5>
+              <h6 class="num">{{posted}}</h6>
+             
+            </div>
+            
+          </div>
+
+    </div>
+  
+      <div class="col mb-4">
+          <div class="card " >
+              <i class="bi bi-laptop"></i>
+              <div class="card-body">
+                <h5 class="card-title">Collected donations</h5>
+                <h6 class="num">{{completed.length}}</h6>
+               
+              </div>
+              
+            </div>
+  
+      </div>
+      <div class="col mb-4">
+          <div class="card" >
+              <i class="bi bi-laptop"></i>
+              <div class="card-body">
+                <h5 class="card-title">Donations to collect</h5>
+                <h6 class="num">{{inProgress.length}}</h6>
+               
+              </div>
+              
+            </div>
+      </div>
+      <!-- <ngx-spinner type="ball-scale-multiple"></ngx-spinner> -->
+
+
+
+      
+
+  
+  
+    
+   
+  </div> 
+    
+  
+

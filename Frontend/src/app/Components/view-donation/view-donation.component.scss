@@ -1,0 +1,58 @@
+
+
+
+
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+.card{
+    background-color: #2F2E41;
+    color: aliceblue;
+    width: 80%;
+    margin-left: 2rem;
+}
+button{
+    background-color:aliceblue;
+    color: #2F2E41;
+    
+}
+h1{
+    text-align: center;
+    padding: 1rem;
+    color: #2F2E41;
+}
+
+.container{
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+}
+.btn1{
+  background-color: #2F2E41;
+  color: aliceblue;
+  border: 1px solid white;
+
+}
+
+.btn1:hover
+{
+    background-color: white;
+    color: #2F2E41;
+}
+.desc
+{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height:46px;
+    text-align: center;
+    margin: auto;
+    
+}
+
+
+
+

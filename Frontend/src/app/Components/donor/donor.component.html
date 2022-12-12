@@ -1,16 +1,45 @@
-<p>WELCOME TO DONOR PLATFORM</p>
+<div class = "container">
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 justify-content-center">
-    <div class="col mb-4">
+  <div class = "heading">
+    Donor Platform
+  </div>
+<br>
 
-        <div class="card">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center">
+    <div class="col">
+      
+        <div class="card mb-4 " >
             <i class="bi bi-laptop"></i>
             <div class="card-body">
-              <h5 class="card-title">Donations</h5>
-              <h6 class="num">3</h6> 
+              <h5 class="card-title">Donations completed</h5>
+              <h6 class="num">{{completed.length}}</h6>
+             
             </div>
             
           </div>
 
     </div>
-<button type="button" class="btn btn-primary" routerLink="/home">Logout</button>
+    
+    
+    <div class="col">
+        
+        <div class="card mb-4" >
+            <i class="bi bi-laptop"></i>
+            <div class="card-body">
+              <h5 class="card-title">donations in progress</h5>
+              <h6 class="num">{{inProgress.length}}</h6>
+             
+            </div>
+            
+          </div>
+    </div>
+    
+  </div>
+
+  <!-- <ngx-spinner type="ball-scale-multiple"></ngx-spinner> -->
+
+
+  
+ 
+</div> 
+  

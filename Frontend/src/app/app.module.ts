@@ -8,13 +8,12 @@ import { NavComponent } from './Components/nav/nav.component';
 import { HomeComponent } from './Components/home/home.component';
 import { DonorComponent } from './Components/donor/donor.component';
 import { DoneeComponent } from './Components/donee/donee.component';
-import { FormComponent } from './Components/form/form.component';
+import { FormComponent} from './Components/form/form.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { TrackComponent } from './Components/track/track.component';
 import { ConfirmComponent } from './Components/confirm/confirm.component';
 import { DonationsComponent } from './Components/donations/donations.component';
 import { ScheduleComponent } from './Components/schedule/schedule.component';
-import { ViewDonationComponent } from './Components/view-donation/view-donation.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -38,7 +37,6 @@ import { NgToastModule } from 'ng-angular-popup';
     ConfirmComponent,
     DonationsComponent,
     ScheduleComponent,
-    ViewDonationComponent
   ],
   imports: [
     BrowserModule,

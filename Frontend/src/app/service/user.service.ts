@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-
+ 
   baseUrl : String = 'http://localhost:8080/api';
   fullname = localStorage.getItem('name')+' '+localStorage.getItem('surname')
 
@@ -13,33 +13,33 @@ export class UserService {
 
   constructor(private http :HttpClient) { }
 
-  createPost(data: any) {
-    return this.http.post(this.baseUrl+'/addPost/'+localStorage.getItem('user_id'),data);
+  createDonations(data: any) {
+    return this.http.post(this.baseUrl+'/addDonations/'+localStorage.getItem('user_id'),data);
   }
 
-  getPosts() {
-    return this.http.get(this.baseUrl+'/getPosts');
+  getDonations() {
+    return this.http.get(this.baseUrl+'/getDonations');
   }
 
-  getCompletedPosts(){
+  getCompletedDonations(){
     return this.http.get(this.baseUrl+'/getCompleted/'+localStorage.getItem('user_id'))
 
   }
 
-  getInProgressPosts(){
+  getInProgressDonations(){
     return this.http.get(this.baseUrl+'/getInProgress/'+localStorage.getItem('user_id'))
 
   }
 
-  deletePost(id:any,data:any)
+  deleteDonations(id:any,data:any)
   {
-    return this.http.patch(this.baseUrl+'/deletePost/'+id,data);
+    return this.http.patch(this.baseUrl+'/deleteDonations/'+id,data);
 
   }
 
-  updatePost(postId:any ,form:any)
+  updateDonations(postId:any ,form:any)
   {
-    return this.http.patch(this.baseUrl+'/updatePost/'+postId,form);
+    return this.http.patch(this.baseUrl+'/updateDonations/'+postId,form);
 
   }
  
@@ -55,14 +55,23 @@ export class UserService {
 
   }
 
-  getOnePost(id:any)
+  getOneDonations(id:any)
   {
-    return this.http.get(this.baseUrl+'/getOnePost/'+id);
+    return this.http.get(this.baseUrl+'/getOneDonations/'+id);
   }
 
   getOneUser(user_id:any)
   {
     return this.http.get(this.baseUrl+'/getOneUser/'+user_id);
+  }
+
+  getDonorDonations() {
+    return this.http.get(this.baseUrl+'/getDonorPosts/'+localStorage.getItem('user_id'));
+  }
+
+  addDonations(data:any)
+  {
+    return this.http.post(this.baseUrl+'/addDonations/'+this.fullname,data);
   }
 
 

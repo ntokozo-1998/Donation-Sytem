@@ -18,10 +18,9 @@
   }
   
   .btn{
-    width: 50%;
+    width: 30%;
     color: rgb(6, 1, 1);
     background-color:#F1F1F1;  
-    margin-left: 90px;
     text-align: center;
     padding: 4px;
   }
@@ -104,5 +103,9 @@
   }
   .p{
     color: #F1F1F1;
+  }
+  .btn-div{
+    display: flex;
+    justify-content: center;
   }
   

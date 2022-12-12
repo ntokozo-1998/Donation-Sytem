@@ -1,0 +1,159 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.container{
+    display: flex;
+    width: 100vw;
+    background-color: white;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+   
+}
+.addBut{
+    padding-top: 1rem;
+
+
+}
+.addBut .btn-primary{
+    background-color: black;
+}
+.tablebeg{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2.5rem;
+   // width: 100vw;
+        margin: auto;
+        align-items: center;
+    align-content: center;
+    justify-items: center;
+
+}
+
+.table{
+border: 1px solid white;
+width: 100%;
+justify-content: center;
+height: auto;
+}
+*th{
+    border-right: 1px solid white;
+    background-color: lightgrey;
+    font-weight: lighter;
+    font-family: Arial;
+    color: 2F2E41;
+    
+}
+.hed1{
+    //ID header 
+font-size: 1.2rem;
+text-align: left;
+width: 5%;
+}
+.hed2{
+//Task display
+font-size: 1.2rem;
+}
+.hed3{
+//Status buttons
+    font-size: 1.2rem;
+    width: 30%;
+}
+.hed4{
+    width: 20%;
+    font-size: 1.2rem;
+}
+
+*td{
+    border-right: 1px solid white;
+    background-color: darkgrey;
+    border-top: 1px solid darkgrey;
+
+   
+}
+ .jobStatus{
+       // display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+    }
+
+.actionBut{
+    display: flex;
+   // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center; 
+    gap: 2rem; 
+    
+}
+
+.actEdt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center; 
+
+}
+.actDel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center; 
+
+}
+
+
+.bi-check-circle{
+    color: rgb(127, 210, 1);
+ font-size: 1.5rem;
+}
+.bi-trash-fill{
+color: red;
+font-size: 1.5rem;
+
+}
+
+.prog{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 0.2rem;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    margin: auto;
+    width: 6rem;
+}
+
+
+
+
+
+
+.userTit{
+    
+    display: flex;
+    background-color: black;
+    width: 3rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    color: white;
+
+}
+.userTit i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+

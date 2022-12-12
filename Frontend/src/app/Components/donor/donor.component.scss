@@ -1,22 +1,15 @@
-.btn{
-    width: 50%;
-    color: rgb(6, 1, 1);
-    background-color:#F1F1F1;  
-    margin-left: 90px;
-    margin-top: 200px;
-    text-align: center;
-    padding: 4px;
-  }
-  .heading{
+.heading{
     font-weight:bold;
     color: #2F2E41;
 }
 
 
 .card{
-    background-color: #2F2E41;
+    background-color: #0D4862;
     color: #fff;
-    
+    //width: 136px;
+    //height: 107px;
+
 }
 
 .bi{
@@ -26,9 +19,19 @@
     height: 39px;
     font-size: 2rem;
     text-align: center;
+    
+    
+
 }
 .card-title{
     margin:auto;
-    text-align: center;
     font-size: 13px;
+    text-align: center;
+    
+}
+
+.num{
+    margin:auto;
+    text-align: center;
+
 }

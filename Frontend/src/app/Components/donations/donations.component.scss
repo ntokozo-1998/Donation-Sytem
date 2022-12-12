@@ -1,0 +1,84 @@
+.donation
+{
+  background-color: #0D4862;
+  padding-bottom: 6rem;
+  padding-top: 9rem;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  border-radius: 1rem;
+}
+.lis{
+    font-size: 2rem;
+}
+.type{
+    text-align: center;
+    display: flex;
+    padding-left: 1.98rem;
+    font-size: 25px;
+    font-family: 'poppins';
+    font-weight: 400;
+    margin-top: -8rem;
+    margin-bottom: -1rem;
+    color: white;
+
+}
+.listdetail{
+    display: flex;
+    padding-top: 2rem;
+}
+.header-div{
+    padding-left: 4rem;
+}
+.desc{
+    padding-left: 2rem;
+    line-height: 1.5em;
+    color: white;
+}
+.hours{
+    padding-left: 2rem;
+}
+.address{
+    font-size: 18px;
+    font-family: 'poppins';
+    font-weight: 700;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    color: white;
+}
+button{
+    background-color: white;
+    width: 150px;    
+}
+span{
+    background-color: #2F2E41;
+    padding: 10px;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+  }
+.formBid{
+   // display: flex;
+    padding-top: 1.5rem;
+}
+
+.btn1{
+    background-color: white;
+    color: #0D4862;
+    border: 1px solid white;
+  
+  }
+  
+  .btn1:hover
+  {
+      background-color: transparent;
+      color: white;
+      border:  1px solid #2F2E41;
+  }
+  .h4{
+    text-align: center;
+    color: #0D4862;
+    margin-bottom: 3rem;
+  }
+  .card{
+    background-color: #0D4862;
+  }

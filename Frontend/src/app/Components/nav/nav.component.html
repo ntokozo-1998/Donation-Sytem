@@ -1,54 +1,72 @@
 <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light" *ngIf="isLoggedIn">
-      <a class="navbar-brand" href=""><span class="text font-bold">donor<span class="text font-light"></span></span></a>
-      <button class="navbar-toggler button-nav" (click)="ngOnInit()"type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      
-      </button>
-  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#" [routerLink] = dashboardRoute >Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" [hidden]="checkAccount()" routerLink="/posts">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" [hidden]="checkAccount()" routerLink="/bids">track</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="#" *ngIf="checkAccount()" routerLink="/jobs">form</a>
-          </li>
-         
-          <li class="nav-item" *ngIf="isLoggedIn">
-            <a class="nav-link" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalCenter">Logout</a>
-          </li>
-        </ul>
-  
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">You're leaving us</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                Are you sure you want to log out?
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                <button type="button" class="btn  logout-btn" (click)="logout()" data-dismiss="modal" data-toggle="collapse"data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Yes, I'm leaving</button>
-              </div>
+  <nav class="navbar navbar-expand-lg navbar-light" *ngIf="isLoggedIn">
+    <a class="navbar-brand" href=""><span class="text font-bold">Change<span class="text font-light">_world</span></span></a>
+    <button class="navbar-toggler button-nav" (click)="ngOnInit()"type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+      <img style="border-radius: 50%;height:40px;width:40px;" [src]=image>
+    
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink] = dashboardRoute >Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" [hidden]="checkAccount()" routerLink="/posts">donations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" [hidden]="checkAccount()" routerLink="/bids">form</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" *ngIf="checkAccount()" routerLink="/jobs">view-donation</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#" *ngIf="checkAccount()" routerLink="/jobs">Schedule</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" *ngIf="checkAccount()" routerLink="/jobs">track</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/profile">Profile</a>
+        </li>
+       
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalCenter">Logout</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        <div class="profile my-2 my-lg-0">
+        <span class="text fw-bold">{{name}} &nbsp;<img class="profile-image" style="border-radius: 50%;height:40px;width:40px;" [src]=image></span>      
+      </div>
+      </span>
+
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">You're leaving us</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to log out?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+              <button type="button" class="btn  logout-btn" (click)="logout()" data-dismiss="modal" data-toggle="collapse"data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Yes, I'm leaving</button>
             </div>
           </div>
         </div>
-  
-        
       </div>
-    </nav>
-  
-  
-  </div>
+
+      
+    </div>
+  </nav>
+
+
+</div>

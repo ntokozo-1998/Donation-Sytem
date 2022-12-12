@@ -1,1 +1,21 @@
-<p>donations works!</p>
+
+<div class="container-fluid">
+  <h1>Donations</h1>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 justify-content-center">
+  <div class="col mb-4" *ngFor="let job of donations">
+      <div class="card text-center">
+           <div class="card-body">
+              <h5 class="card-title">{{donations.donations_type}}</h5>
+             <p class="card-text desc">{{donations.donations_desc}}</p>
+             <h5 class="card-title">{{donations.donations_address}}</h5>
+             <br>
+             <button type="button" class="btn btn-primary btn1" (click)="setDonationsDetails(donations.donations_type,donations.donations_desc,donations.donations_address,donations.donations_id,donations.user_id)" routerLink="/viewjob">Read more</button>
+           </div>
+      </div> 
+  </div>
+
+    <br>
+  </div>
+
+

@@ -27,14 +27,14 @@
 }
  
 .btn{
-    width: 50%;
+    width: 30%;
     transition: 500ms;
     color: #0D4862;
     background-color:#F1F1F1 ;
     align-items: center;
     align-self: center;    
     display: flex;
-    margin-left: 100px;
+    //margin-left: 100px;
     text-align: center;
 }
 .btn:hover{
@@ -89,3 +89,7 @@ p{
 .form-label{
     color: #F1F1F1;   
 }
+.btn-div{
+    display: flex;
+    justify-content: center;
+  }

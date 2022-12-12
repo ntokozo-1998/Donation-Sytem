@@ -1,0 +1,242 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.container{
+    display: flex;
+    width: 100vw;
+    background-color: #0D4862;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+   
+}
+.addBut{
+    padding-top: 1rem;
+
+
+}
+.addBut .btn-primary{
+    background-color: #2F2E41;
+    border: none;
+}
+.tablebeg{
+    
+    padding-top: 2rem;
+    max-width: 95%;
+    margin: auto;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+
+
+}
+
+.table{
+
+width: 100%;
+justify-content: center;
+height: auto;
+border-radius: 10px;
+
+font-family: 'Poppins';
+}
+*th{
+    border-right: 1px solid white;
+    background-color: lightgrey;
+    font-weight: lighter;
+    font-family: Arial;
+    text-align: start;
+    
+}
+.hed1{
+    //ID header 
+font-size: 1.2rem;
+text-align: left;
+width: 5%;
+}
+.hed2{
+//Task display
+font-size: 1.2rem;
+}
+.hed3{
+//Status buttons
+    font-size: 1.2rem;
+    width: 20%;
+}
+.hed4{
+    width: 20%;
+    font-size: 1.2rem;
+}
+
+*td{
+    border-right: 1px solid white;
+    background-color: darkgrey;
+    border-top: 1px solid darkgrey;
+}
+
+.actionBut{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center; 
+    gap: 2rem; 
+}
+
+.actEdt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center; 
+    background-color: white;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    border-radius: 0.3rem;
+}
+.actDel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center; 
+    
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.3rem;
+}
+.edtBtn{
+    border-radius: 00.3rem;
+    border: none;
+    transition: 300ms;
+    
+    &:hover{
+        transform: scale(1.03);
+
+    }
+    
+}
+.delBtn{
+    border-radius: 00.3rem;
+    border: none;
+    transition: 300ms;
+    
+    &:hover{
+        transform: scale(1.03);
+
+    }
+    
+}
+
+.bi-pencil-square{
+    color: #2F2E41;
+    font-size: 1.5rem;
+}
+.bi-trash-fill{
+color: red;
+font-size: 1.5rem;
+
+}
+
+.prog{
+    background-color: white;
+    border-radius: 0.2rem;
+    text-align: center;
+    width: 6rem;
+}
+.titleInp input{
+    border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+}
+.priceInp input{
+    border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+}
+
+
+
+
+/////modal styling
+/// 
+/// 
+//Title style
+.modal-body{
+    background-color: lightgrey;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    
+}
+.postTit{
+    padding-top: 1rem;
+}
+
+.postTitle{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+}
+// .titleInp{
+
+// }
+.userTit{
+    
+    display: flex;
+    background-color: black;
+    width: 3rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    color: white;
+
+}
+.userTit i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+//Bidding price post
+.postPrice{
+    padding-top: 2rem;
+}
+.priceInp{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+//Description post
+.descrTitl{
+   padding-top: 1.5rem;
+}
+// .descrInf{
+
+// }
+.descrInf input{
+    width: 18.7rem;
+    height: 10rem;
+    box-sizing: border-box;
+    resize: none;
+    textarea {
+        width: 100%;
+        height: 150px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        resize: none;
+      }
+}
+
+
