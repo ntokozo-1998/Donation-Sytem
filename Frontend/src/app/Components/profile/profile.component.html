@@ -1,1 +1,116 @@
-<p>profile works!</p>
+
+<div class="header container-fluid col-md-11 col-lg-8">
+    <div class="container-fluid col-md-11 col-lg-8">
+        <div class="row">
+            <div class="col-lg-10 header-div">
+              <p>
+                Profile
+              </p>
+              
+            </div>           
+        </div>
+    </div>
+  </div> 
+  
+    
+  <div class="container-fluid form-div col-md-11 col-lg-8">
+    <div class="d-flex justify-content-center mb-3 mt-3 ">
+      <img [src]=image_link class="" style="border-radius: 50%;height:140px;width:140px;" alt="Avatar" />
+    </div>
+    <a class="btn edit-dp d-flex justify-content-center" data-toggle="modal" data-target="#updatePicture"><i class="fi fi-rr-pencil icon"></i></a>
+    
+    <div class="modal fade" id="updatePicture" tabindex="-1" role="dialog" aria-labelledby="updatePictureTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Change Profile Picture</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              x
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-center mb-4 mt-2">
+              <img [src]=image_link class=" rounded" style="width: 150px;" alt="Avatar"/>
+            </div>
+
+            <form class="form" [formGroup]="update_dp" (ngSubmit)="onSubmit()">
+              <input type="file" accept =".png, .jpg, .jpeg" formControlName="file" class="form-control" required id="fileInput" (change)="onFileChange($event)">
+              <label class="label form-label text-muted" for="fileInput">[Recommended] Use a picture with a ratio 1:1 eg. 500x500 (.png, .jpeg, .jpg)</label>
+              <br>
+              <div class="action-btn">
+                <button type="button" class="btn btn-secondary cancel" data-dismiss="modal">Cancel</button> <button type="submit" [disabled]="update_dp.invalid"class="btn btn-secondary">Upload</button>
+              </div>
+            </form>
+            <br>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="container-fluid d-flex justify-content-center mb-1 col-lg-6">
+      <h5 class="justify-content-center"><strong>{{name}} {{surname}}</strong></h5>  &nbsp;
+      <p class="text-muted text-center">{{account}} &nbsp;<span *ngIf="showRating" class="badge rounded bg-secondary">{{rating}}</span></p>
+      
+    </div> -->
+
+
+    <div class="btn-div container-fluid mb-3 col-lg-6">
+      <button type="button" class="btn btn-med" data-toggle="button" aria-pressed="false" autocomplete="off" [hidden]="isUpdating" (click)="toggleUpdate()">Edit Profile</button>
+
+    </div>
+      <!-- form card Register -->
+          <div class="card-body">
+              <form class="form" id="form" *ngIf="isUpdating" [formGroup]="updateForm" (ngSubmit)="onUpdate(updateForm)">    
+                  <div class="container-fluid mb-3 col-lg-8">
+                    <label for="Name" class="form-label">First Name</label>
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Name" aria-describedby="addon-wrapping" formControlName="name"  placeholder = "{{name}}" minlength="2" required>
+                      <span><i class="bi bi-person-fill"></i></span> 
+                    </div>
+                  </div>
+  
+                  <div class="container-fluid mb-3 col-lg-8">
+                    <label for="Surname" class="form-label">Last Name</label>
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Surname" aria-describedby="addon-wrapping" formControlName="surname" placeholder="{{surname}}">
+                      <span><i class="bi bi-person-fill"></i></span> 
+                    </div>
+                </div>
+  
+                    <div class="container-fluid mb-3 col-lg-8">
+                      <label for="Password" class="form-label">Password</label>
+                      <div class="input-group mb-3">
+                        <input type="password" class="form-control" aria-label="Password" aria-describedby="addon-wrapping" formControlName="password" minlength="3" required>
+                        <span><i class="bi bi-key-fill"></i></span> 
+                      </div>
+                    </div>
+  
+                    <div class="container-fluid mb-3 col-lg-8">
+                      <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                      <div class="input-group mb-3">
+                        <input type="password" class="form-control" aria-label="ConfirmPassword" aria-describedby="addon-wrapping" formControlName="confirmPassword" minlength="3" required>
+                        <span><i class="bi bi-key-fill"></i></span> 
+                      </div>
+                    </div>
+  
+                    <div class="btn-div container-fluid mb-3 col-lg-8">
+                      <button id="button" type="submit"class="btn btn-med" [disabled] = "updateForm.invalid">Save</button>
+                    </div>
+                 
+              </form>
+          
+          <!--/card-block-->
+      </div>
+      <!-- /form card register -->
+      <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+      
+  
+  </div>
+  <!--/container-->
+  
+  
+  

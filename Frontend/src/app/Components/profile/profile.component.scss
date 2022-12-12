@@ -1,0 +1,120 @@
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+.header {
+    background-color :#2F2E41;
+    padding: 5px;
+    border-radius: 5px 5px 0px 0px;    
+    & .header-div
+    {
+        margin: auto;
+        & p{
+            text-align:center ;
+            color: rgb(255, 255, 255);
+            font-size: larger;
+            font-weight: bold;
+            width: 100%;
+            align-items: center;
+        }
+    }
+  }
+  .action-btn
+  {
+    display: flex;
+    gap: 1.5rem;
+   
+    & .cancel
+    {
+      background-color:white;
+      color: #2F2E41;
+    }
+    &.btn-secondary
+    {
+      width: 60%;
+    }
+  }
+
+  .cancel:hover
+  {
+      background-color: #2F2E41 !important;
+      color: white !important;
+  }
+  
+  .btn{
+   
+    width: 100%;
+    transition: 500ms;
+    color: rgb(255, 255, 255);
+    background-color: #2F2E41;      
+  }
+  .btn:hover{
+        background-color: transparent;
+        border: 1px solid #2F2E41;
+        transform: scale(1.015);
+        color: #2F2E41;
+        font-weight: 700;
+  }
+  .links
+  {
+    & a{
+        text-decoration: none;
+        color: black;
+        transition: 300ms;
+    }
+  
+  }
+  a:hover
+  {
+        cursor: pointer;
+        font-size: 15px;
+        color: #2F2E41;
+  }
+  .form-div
+  {
+    background-color: #F1F1F1;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  
+  span{
+    background-color: #2F2E41;
+    padding: 10px;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+  }
+  .label-center
+  {
+    align-items: center;
+  }
+  .intro{
+    padding-top: 1.9rem;
+    text-align: center;
+  }
+
+  .image-div
+  {
+    position: relative;
+  }
+  .edit-dp
+  {
+    
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    padding: 0;
+    background-color: #aaaaac;
+    margin: auto;
+    margin-bottom: .5rem;
+    
+  }
+  .icon{
+    color:white;
+    text-align: center !important;
+    margin: auto;
+    font-size: 13px;
+    width: 50%;
+
+  }
+  
+  
+  
+  
+  
