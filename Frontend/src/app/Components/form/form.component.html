@@ -6,10 +6,11 @@
    <h3> Donation Form </h3> 
 </div>
 <br>
-<form>
+<form [formGroup]="DonationsForm" (ngSubmit)="onSubmit(DonationsForm)">
+
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Address</label>
-      <textarea class="form-control" placeholder="collection address" id="floatingTextarea2" style="height: 80px"></textarea>
+      <textarea class="form-control" placeholder="collection address" formControlName="address" id="floatingTextarea2" style="height: 80px"></textarea>
     </div>
 
 
@@ -19,27 +20,27 @@
     <h6>Type of donation</h6>
 
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="Donor">
-        <label class="form-check-label" for="Donor">
+        <input class="form-check-input" type="radio" value="food" name="flexRadioDefault" id="food" formControlName="type">
+        <label class="form-check-label" for="food">
            Food
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="Donor">
-        <label class="form-check-label" for="Donor">
+        <input class="form-check-input" type="radio" value="clothes" name="flexRadioDefault" id="clothes" formControlName="type">
+        <label class="form-check-label" for="clothes">
            Clothes
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="Donor">
-        <label class="form-check-label" for="Donor">
+        <input class="form-check-input" type="radio" value="books" name="flexRadioDefault" id="books" formControlName="type">
+        <label class="form-check-label" for="books">
             Books
         </label>
       </div>
       <div class="form-check">
         
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="Donne" checked>
-        <label class="form-check-label" for="Donee">
+        <input class="form-check-input" type="radio" value="others" name="flexRadioDefault" id="others" formControlName="type">
+        <label class="form-check-label" for="others">
           Others
         </label>
       </div>
@@ -50,18 +51,31 @@
 
     <div class="mb-3">
       <label for="description" class="form-label">Description</label>
-      <textarea class="form-control" placeholder="please describe your donation." id="floatingTextarea2" style="height: 60px"></textarea>
+      <textarea class="form-control" placeholder="please describe your donation." id="floatingTextarea2" style="height: 60px" formControlName="description"></textarea>
     </div>
 
-    <div class="form-floating">
+    <!-- <div class="form-floating">
+        <label for="floatingTextarea2" class="form-label" >Comments</label>
         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
-        <label for="floatingTextarea2">Comments</label>
-      </div>
-
-      <br>
+       
+      </div> -->
+      
+        <div class="mb-3">
+          <label for="time" class="form-label">Time</label>
+          <input type="time" class="form-control" id="time" formControlName="time">
+        </div>
     
-    <button type="next" class="btn btn-primary">Next</button>
-  </form>
+        <div class="mb-3">
+          <label for="date" class="form-label">Date</label>
+          <input type="date" class="form-control" id="date" formControlName="date">
+        </div>
+        <br>
+    
+        <div class="divBtn">
+            <button type="submit" class="btn btn-primary" [disabled]="DonationsForm.invalid">Submit</button>
+        </div>
+        
+      </form>
 
 </div>
 

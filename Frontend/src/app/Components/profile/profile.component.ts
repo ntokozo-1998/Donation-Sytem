@@ -104,12 +104,12 @@ export class ProfileComponent implements OnInit {
       {
         this.userService.updateProfile(this.user_id, form.value).subscribe((data:any)=>{
           this.toastr.success(data.message);
-          if(this.account == 'Freelancer')
+          if(this.account == 'Donor')
           {
-            this.router.navigateByUrl('/freelancer');
+            this.router.navigateByUrl('/Donor');
           }else
           {
-            this.router.navigateByUrl('/client');
+            this.router.navigateByUrl('/Donee');
     
           }
         },(err:HttpErrorResponse)=>{

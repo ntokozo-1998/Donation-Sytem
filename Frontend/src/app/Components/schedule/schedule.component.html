@@ -5,7 +5,7 @@
     <div class="form1">
         <h4>Schedule suitable Time & Date for pickup</h4>
     </div>
-    <form>
+    <form [formGroup]="DonationsForm" (ngSubmit)="onSubmit(DonationsForm)">
         <div class="mb-3">
           <label for="time" class="form-label">Time</label>
           <input type="time" class="form-control" id="time">
@@ -18,10 +18,9 @@
         <br>
     
         <div class="divBtn">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" [disabled]="DonationsForm.invalid">Submit</button>
         </div>
         
       </form>
-
-</div>
+    </div>
 

@@ -10,12 +10,13 @@ const db = new Pool({
 
 exports.addDonations = async (req, res)=>{
     const user_id = req.params.user_id;
-    const {type, description , address } = req.body;
+    const {type, description , address, date, time } = req.body;
     //const Donation = req.params.freelancer;
     
-    const sql = 'INSERT INTO donations (donations_type, donations_description, donations_address, user_id, hidden,status) VALUES ($1,$2,$3,$4,$5,$6) RETURNING donations_id';
+    const sql = 'INSERT INTO donations (donations_type, donations_description, donations_address, user_id, hidden,status, date, time) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING donations_id';
  
-    db.query(sql,[type, description , address ,user_id, false,"No Status"],(err,results)=>{
+    db.query(sql,[type, description , address ,user_id, false,"No Status",date,time],(err,results)=>{
+        console.log(err)
         if(err)
         {
             
