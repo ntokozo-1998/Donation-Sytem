@@ -16,19 +16,19 @@ export class ConfirmComponent implements OnInit {
 
 statusChangeC() {
 
-  this.statusMes = this.statusMes? this.statusMes : 'Completed';
-  if(this.statusMes === 'In Progress')
+  this.statusMes = this.statusMes? this.statusMes : 'On my status';
+  if(this.statusMes === 'No status')
   {
-    this.statusMes = 'Completed';
+    this.statusMes = 'On my status';
   }
 }
 
 statusChangeP() {
 
-  this.statusMes = this.statusMes? this.statusMes : 'In Progress';
-  if(this.statusMes === 'Completed')
+  this.statusMes = this.statusMes? this.statusMes : 'No status';
+  if(this.statusMes === 'On my status')
   {
-    this.statusMes = 'In Progress';
+    this.statusMes = 'No status';
   }
 }
 
