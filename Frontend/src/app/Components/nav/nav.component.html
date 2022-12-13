@@ -8,29 +8,36 @@
 
     
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">form</a>
+                <a class="nav-link active" aria-current="page" href="#" *ngIf="checkAccount()" >form</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" routerLink="/profile" routerLinkActive="active" >Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" routerLink="/donee" >Donee</a>
+                <a class="nav-link" href="#" routerLink="/donee" [hidden]="checkAccount()">Donee</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" routerLink="/donor" >Donor</a>
+                <a class="nav-link" href="#" routerLink="/donor" *ngIf="checkAccount()">Donor</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" routerLink="/confirm" >Confirm</a>
+                <a class="nav-link" href="#" routerLink="/confirm" [hidden]="checkAccount()">Confirm</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link ">logout</a>
+                <a class="nav-link" href="#" routerLink="/home">logout</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" routerLink="/confirm" [hidden]="checkAccount()">view-donation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" routerLink="/confirm" [hidden]="checkAccount()">donations</a>
+              </li>
+      
             </ul>
           </div>
  

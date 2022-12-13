@@ -112,7 +112,19 @@ export class FormComponent implements OnInit {
   
   data ={
     status: '',
-    donations_id: ''
+    donations_id: '',
+      dev_id: '',
+      dev_name : '',
+      dev_surname : ''
+    }
+  
+    developer = {
+      name: '',
+      surname: '',
+      image: '',
+      email:'',
+    }
+  
   }
     // changeStatus(status:any, donations_id:any,dev_id:any){
     //   this.data.status = status;
@@ -136,5 +148,4 @@ export class FormComponent implements OnInit {
     //   })
       
       
-    }
   

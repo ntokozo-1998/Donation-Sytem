@@ -95,12 +95,12 @@
     </div> -->
 
 
-    <div class="btn-div container-fluid mb-3 col-lg-6">
+    <!-- <div class="btn-div container-fluid mb-3 col-lg-6"> -->
       <button type="button" class="btn btn-med" data-toggle="button" aria-pressed="false" autocomplete="off" [hidden]="isUpdating" (click)="toggleUpdate()">Edit Profile</button>
 
-    </div>
+    <!-- </div> -->
       <!-- form card Register -->
-          <div class="card-body">
+          <!-- <div class="formUpdate"> -->
               <form class="form" id="form" *ngIf="isUpdating" [formGroup]="updateForm" (ngSubmit)="onUpdate(updateForm)">    
                   <div class="container-fluid mb-3 col-lg-8">
                     <label for="Name" class="form-label">First Name</label>
@@ -139,9 +139,11 @@
                     </div>
                  
               </form>
+
+              
           
           <!--/card-block-->
-      </div>
+      <!-- </div> -->
       <!-- /form card register -->
       <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
 

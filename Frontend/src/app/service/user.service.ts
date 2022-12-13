@@ -17,8 +17,8 @@ export class UserService {
     return this.http.post(this.baseUrl+'/addDonations/'+localStorage.getItem('user_id'),data);
   }
 
-  getDonations() {
-    return this.http.get(this.baseUrl+'/getDonations');
+  getDonation() {
+    return this.http.get(this.baseUrl+'/getDonation');
   }
 
   getCompletedDonations(){

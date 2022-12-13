@@ -1,5 +1,6 @@
 const Pool = require('pg').Pool;
 var smtpTransport = require('nodemailer-smtp-transport');
+const nodemailer = require("nodemailer");
 
 const db = new Pool({
     user: 'admin',  //Database username
@@ -15,8 +16,8 @@ const db = new Pool({
        
     service:'hotmail',
     auth: {
-      user: 'changeworld12@outlook.com', // 
-      pass: 'ChangeWorld', // 
+      user: 'changeworld12@outlook.com', 
+      pass: 'ChangeWorld', 
     },
   });
 
@@ -46,6 +47,36 @@ exports.addDonations = async (req, res)=>{
         }else
         {
             res.status(200).json({message: 'Your donation was successfully added '});
+            {
+                db.query("SELECT * FROM users WHERE user_id = $1",[dev_id],(db_error,emailResults)=>{
+                    emailDetails.from = sender;
+                    emailDetails.to = emailResults.rows[0].email;
+                    emailDetails.text = "Congratulations! "+dev_name+'\n\nYou have a donation '+results.rows[0].donations_title +' from the good samaritan \'in progress\' \n\nChange world ';
+                
+                    emailDetails.subject = "Donated";
+    
+                    transporter.sendMail(emailDetails,(emailErr)=>{
+                        if(emailErr){
+                            res.status(400).json(emailErr);
+    
+                        }else{
+                            db.query('UPDATE donations SET hidden = $1 WHERE donations_id = $2',[true,donations_id],(err,hideResults)=>{
+                                if(err)
+                                {
+                                    res.status(401).json({message: err.message});
+    
+                                }else{
+                                    res.status(200).json({message: 'An email sent to the donee'});
+                                }
+                            });
+                            
+    
+                        }
+                    })
+    
+    
+                })
+            }
         }
 
     });

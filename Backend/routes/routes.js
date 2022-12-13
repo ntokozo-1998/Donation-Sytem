@@ -12,13 +12,13 @@ router.patch('/update/:user_id',user.updateUser);
 
 router.post('/addDonations/:user_id',donation.addDonations);
 
-// router.get('/getDonations',donation.getPosts);
+router.get('/getDonation',donation.getDonation);
 
-// router.patch('/updateDonations/:post_id',donation.updatePost);
+// router.patch('/updateDonations/:post_id',donation.updateDonations);
 
 // router.patch('/updateStatus/',donation.updateStatus);
 
-// router.get('/getOneDonation/:user_id',donation.getOnePost);
+//router.get('/getOneDonation/:user_id',donation.getOneDonations);
 
 // router.get('/getOneUser/:user_id',user.getOneUser);
 
@@ -26,7 +26,7 @@ router.post('/addDonations/:user_id',donation.addDonations);
 
 // router.get('/getInProgress/:user_id',donation.getInProgress);
 
-// router.get('/getDonorDonations/:user_id',donation.getDonorDonations);
+//router.get('/getDonorDonations/:user_id',donation.getDonorDonations);
 
 // router.patch('/deleteDonations/:post_id',donation.deleteDonation);
 

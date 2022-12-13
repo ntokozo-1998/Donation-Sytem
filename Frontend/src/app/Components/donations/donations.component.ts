@@ -10,6 +10,8 @@ import { UserService } from 'src/app/service/user.service';
 export class DonationsComponent implements OnInit {
   type : any;
   donations: any;
+  time: any;
+  date: any;
   address : string = '';
   description : string = '';
   user_id : any ='';
@@ -18,26 +20,29 @@ export class DonationsComponent implements OnInit {
   constructor(private userService : UserService) { }
 
   ngOnInit(): void {
-    this.id = setInterval(() => {
+    // this.id = setInterval(() => {
       this.refresh(); 
-    }, 800);
+    // }, 800);
    
   }
 
-  setDonationsDetails(type :string ,description :string,address :any,id :any,user_id:any)
+  setDonationsDetails(type :string ,description :string,address :any,id :any,user_id:any, date:any, time: any)
   {
     localStorage.setItem('donations_type',type);
-    localStorage.setItem('donations_desc',description);
+    localStorage.setItem('donations_description',description);
     localStorage.setItem('donations_address',address);
-    localStorage.setItem('post_id',id);
+    localStorage.setItem('date',date);
+    localStorage.setItem('time',time);
+    localStorage.setItem('donations_id',id);
     localStorage.setItem('donor_id',user_id);
 
   }
 
   refresh()
   {
-    this.userService.getDonations().subscribe((data:any) =>{
+    this.userService.getDonation().subscribe((data:any) =>{
       this.donations = data;
+      console.log(this.donations)
 
       
       

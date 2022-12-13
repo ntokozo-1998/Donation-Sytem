@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { NgToastService } from 'ng-angular-popup';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/service/auth.service';
 import { JwtService } from 'src/app/service/jwt.service';
@@ -17,7 +18,7 @@ export class ProfileComponent implements OnInit {
 
 
   updateForm = new FormGroup({
-    username: new FormControl(),
+    //username: new FormControl(),
     password: new FormControl(),
     name: new FormControl('',[Validators.required,Validators.pattern('^[a-zA-Z ]*$')]),
     surname: new FormControl('',[Validators.required,Validators.pattern('^[a-zA-Z ]*$')]),
@@ -25,7 +26,7 @@ export class ProfileComponent implements OnInit {
     //account: new FormControl()
   });
 
-  username ?:string;
+  //username ?:string;
   name ?:string;
   surname ?:string;
   email ?:string;
@@ -47,7 +48,7 @@ export class ProfileComponent implements OnInit {
   isUpdating: boolean = false;
 
 
-  constructor(private userService:UserService,private authService: AuthService, private router: Router,private toastr: ToastrService ,private jwt:JwtService,private spinner:NgxSpinnerService, private http:HttpClient) { }
+  constructor(private userService:UserService,private authService: AuthService, private router: Router,private toast : NgToastService ,private jwt:JwtService,private spinner:NgxSpinnerService, private http:HttpClient) { }
 
   ngOnInit(): void {
     this.spinner.show();
@@ -56,7 +57,7 @@ export class ProfileComponent implements OnInit {
       this.spinner.hide();
     }, 1000);
 
-    this.username = this.jwt.getData(JSON.stringify(localStorage.getItem('token'))).username; 
+    //this.username = this.jwt.getData(JSON.stringify(localStorage.getItem('token'))).username; 
     this.surname = this.jwt.getData(JSON.stringify(localStorage.getItem('token'))).surname;
     this.name = this.jwt.getData(JSON.stringify(localStorage.getItem('token'))).name;
     this.email = this.jwt.getData(JSON.stringify(localStorage.getItem('token'))).email;
@@ -64,7 +65,7 @@ export class ProfileComponent implements OnInit {
     this.user_id = this.jwt.getData(JSON.stringify(localStorage.getItem('token'))).user_id;
 
 
-    if(this.account =='Client')
+    if(this.account =='Donor')
     {
       this.showRating = false;
     }else
@@ -103,7 +104,7 @@ export class ProfileComponent implements OnInit {
       if(form.value.confirmPassword == form.value.password)
       {
         this.userService.updateProfile(this.user_id, form.value).subscribe((data:any)=>{
-          this.toastr.success(data.message);
+          this.toast.success({detail:'Error',summary:(data.message)});
           if(this.account == 'Donor')
           {
             this.router.navigateByUrl('/Donor');
@@ -113,12 +114,12 @@ export class ProfileComponent implements OnInit {
     
           }
         },(err:HttpErrorResponse)=>{
-          this.toastr.error(err.error.message);
+          this.toast.error({detail:'Error',summary:(err.error.message)});
           
         })
 
       }else{
-        this.toastr.warning('Passwords do not match');
+        this.toast.warning({detail:'Warning',summary:'Passwords do not match'});
       }
 
     }
@@ -155,7 +156,7 @@ export class ProfileComponent implements OnInit {
       this.image.link = this.image_link;
       // console.log(res)
       //this.userService.updateProfilePicture(this.user_id,this.image).subscribe((saveData:any)=>{
-        this.toastr.success("Image updated successfully");
+        this.toast.success({detail:'Successful',summary: 'image updated successfully'});
         localStorage.setItem('image_link',this.image_link);
 
         this.spinner.hide();
