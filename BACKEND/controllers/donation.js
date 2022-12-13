@@ -1,4 +1,6 @@
 const Pool = require('pg').Pool;
+var smtpTransport = require('nodemailer-smtp-transport');
+
 const db = new Pool({
     user: 'admin',  //Database username
     host: 'localhost',  //Database host
@@ -7,11 +9,31 @@ const db = new Pool({
     port: 5432//Database port
   });
 
+  const sender =  "changeworld12@outlook.com";
+
+  var transporter = nodemailer.createTransport({
+       
+    service:'hotmail',
+    auth: {
+      user: 'changeworld12@outlook.com', // 
+      pass: 'ChangeWorld', // 
+    },
+  });
+
+  emailDetails = {
+    from: '', //where the email is from 
+    to: '', //where the email is to
+    subject: '', //email subject
+    text: '', //email
+    
+     
+  }
+
 
 exports.addDonations = async (req, res)=>{
     const user_id = req.params.user_id;
     const {type, description , address, date, time } = req.body;
-    //const Donation = req.params.freelancer;
+    const Donation = req.params.donation;
     
     const sql = 'INSERT INTO donations (donations_type, donations_description, donations_address, user_id, hidden,status, date, time) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING donations_id';
  
