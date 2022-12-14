@@ -104,7 +104,7 @@ export class ProfileComponent implements OnInit {
       if(form.value.confirmPassword == form.value.password)
       {
         this.userService.updateProfile(this.user_id, form.value).subscribe((data:any)=>{
-          this.toast.success({detail:'Error',summary:(data.message)});
+          this.toast.success({detail:'Successful',summary:(data.message)});
           if(this.account == 'Donor')
           {
             this.router.navigateByUrl('/Donor');

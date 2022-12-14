@@ -53,8 +53,9 @@ export class TrackComponent implements OnInit {
 
   ngOnInit(): void {
       this.id = setInterval(() => {
-        this.refresh(); 
-      }, 2000);
+      //   this.refresh(); 
+      }, 2000
+      )
      
   }
 

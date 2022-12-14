@@ -31,6 +31,8 @@ const routes: Routes = [
   {path : 'donations' , component : DonationsComponent},
   {path : 'schedule' , component : ScheduleComponent},
   {path : 'confirm' , component : ConfirmComponent},
+  {path : '' , component : HomeComponent},
+
   
 ]
 

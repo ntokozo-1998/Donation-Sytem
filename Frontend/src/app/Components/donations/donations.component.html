@@ -6,11 +6,12 @@
   <div class="col mb-4" *ngFor="let donations of donations">
       <div class="card text-center">
            <div class="card-body">
-            <h5 class="card-title">{{donations.donations_type}}</h5>
+            <h2 class="card-title">{{donations.donations_type}}</h2>
+            <h5 class="card-title">{{donations.donations_address}}</h5>
              <p class="card-text desc">{{donations.donations_description}}</p>
              <p class="card-text desc">{{donations.date}}</p>
              <p class="card-text desc">{{donations.time}}</p>
-             <h5 class="card-title">{{donations.donations_address}}</h5>
+             
              <br>
              <button type="button" class="btn btn-primary btn1" (click)="setDonationsDetails(donations.donations_type,donations.date,donations.time,donations.donations_description,donations.donations_address,donations.donations_id,donations.user_id)" routerLink="/confirm">Read more</button>
            </div>

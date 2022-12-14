@@ -3,12 +3,16 @@
  
 <div class="container-fluid">
 
-    <div class="addBut">
+  <div class="track">
+    <h3>Track</h3>
+  </div>
+
+    <!-- <div class="addBut"> -->
        <!-- Button trigger modal -->
      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addJob"> Add Donation</button>
       -->
      <!-- Modal -->
-     <div class="modal fade" id="addDonation" tabindex="-1" role="dialog" aria-labelledby="addDonationLabel" aria-hidden="true">
+     <!-- <div class="modal fade" id="addDonation" tabindex="-1" role="dialog" aria-labelledby="addDonationLabel" aria-hidden="true">
        <div class="modal-dialog" role="document">
          <div class="modal-content">
            <div class="modal-header">
@@ -21,7 +25,7 @@
              <!-- Modal Body to fill in posting form-->
    
              <!-- Post Inputs-->
-             <form [formGroup]="DonationsForm" (ngSubmit)="onSubmit(DonationsForm)">
+             <!-- <form [formGroup]="DonationsForm" (ngSubmit)="onSubmit(DonationsForm)">
              <div class="donationsTit">
               
                Type
@@ -62,7 +66,7 @@
                    </div>
    
            </div>
-            <!-- Post Inputs-->
+            Post Inputs
            
    
    
@@ -74,7 +78,7 @@
          </div>
        </div>
      </div>
-    </div>
+    </div> --> 
     <!--Modal ends-->
        
        <div class="tablebeg ">
@@ -83,25 +87,25 @@
            <thead class="thead-inverse">
                <tr>
                    
-                   <th class="hed2">Donations Title</th>
+                   <th class="hed2">Donations</th>
                    <th class="hed3">Action</th>
                    <th class="hed3">Status</th>
                    
                </tr>
                </thead>
-               <tbody>
-                   <tr *ngFor="let donation of donations">
+               <tbody *ngFor="let donations of donations">
+                   <tr >
                        
                        <td class="desc" scope="row">{{donations.donations_type}}</td>
                        <td class="actionBut" scope="row"> 
-                           <div class="actEdt"> <button type="button" class="edtBtn" (click)="setDetails(donations.donations_id,donations.donations_type,donations.donations_desc,donations.donations_address)" data-toggle="modal" data-target="#updateDonations">  <i class="bi-pencil-square"></i></button></div>   
+                           <div class="actEdt"> <button type="button" class="edtBtn" (click)="setDetails(donations.donations_id,donations.donations_type,donations.donations_desc,donations.donations_address)" data-toggle="modal" data-target="#updateDonations"><i class="bi-pencil-square"></i></button></div>   
                            <div class="actDel"> <button class="delBtn" (click)="deleteDonations(donations.donations_id)"> <i class="bi-trash-fill"> </i> </button> </div>
                        </td>
                        <td class="status" scope="row">
                          <select class="form-select form-select-sm" #status [disabled]="isRated" (change)="changeStatus(status.value, donations.donations_id,donations.dev_id)">
                            <option [value]="status">{{donations.status}}</option>
-                           <option value="In Progress">In Progress</option>
-                           <option value="Completed">Completed</option>
+                           <option value="In Progress">No Status</option>
+                           <option value="Completed">On the way</option>
                          </select>
    
    

@@ -1,82 +1,84 @@
 <app-nav class="z-40"></app-nav>
 
-<div class="container">
+<div class="main">
+  <div class="container">
 
-<div class="form">
-   <h3> Donation Form </h3> 
-</div>
-<br>
-<form [formGroup]="DonationsForm" (ngSubmit)="onSubmit(DonationsForm)">
+  <div class="form">
+    <h3> Donation Form </h3> 
+  </div>
+  <br>
+  <form [formGroup]="DonationsForm" (ngSubmit)="onSubmit(DonationsForm)">
 
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Address</label>
-      <textarea class="form-control" placeholder="collection address" formControlName="address" id="floatingTextarea2" style="height: 80px"></textarea>
-    </div>
-
-
-
-<div class="radioBtn">
-
-    <h6>Type of donation</h6>
-
-    <div class="form-check">
-        <input class="form-check-input" type="radio" value="food" name="flexRadioDefault" id="food" formControlName="type">
-        <label class="form-check-label" for="food">
-           Food
-        </label>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Address</label>
+        <textarea class="form-control" placeholder="collection address" formControlName="address" id="floatingTextarea2" style="height: 80px"></textarea>
       </div>
+
+
+
+  <div class="radioBtn">
+
+      <h6>Type of donation</h6>
+
       <div class="form-check">
-        <input class="form-check-input" type="radio" value="clothes" name="flexRadioDefault" id="clothes" formControlName="type">
-        <label class="form-check-label" for="clothes">
-           Clothes
-        </label>
+          <input class="form-check-input" type="radio" value="food" name="flexRadioDefault" id="food" formControlName="type">
+          <label class="form-check-label" for="food">
+            Food
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" value="clothes" name="flexRadioDefault" id="clothes" formControlName="type">
+          <label class="form-check-label" for="clothes">
+            Clothes
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" value="books" name="flexRadioDefault" id="books" formControlName="type">
+          <label class="form-check-label" for="books">
+              Books
+          </label>
+        </div>
+        <div class="form-check">
+          
+          <input class="form-check-input" type="radio" value="others" name="flexRadioDefault" id="others" formControlName="type">
+          <label class="form-check-label" for="others">
+            Others
+          </label>
+        </div>
+
+  </div>
+
+  <br>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" placeholder="please describe your donation." id="floatingTextarea2" style="height: 60px" formControlName="description"></textarea>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" value="books" name="flexRadioDefault" id="books" formControlName="type">
-        <label class="form-check-label" for="books">
-            Books
-        </label>
-      </div>
-      <div class="form-check">
+
+      <!-- <div class="form-floating">
+          <label for="floatingTextarea2" class="form-label" >Comments</label>
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
         
-        <input class="form-check-input" type="radio" value="others" name="flexRadioDefault" id="others" formControlName="type">
-        <label class="form-check-label" for="others">
-          Others
-        </label>
-      </div>
-
-</div>
-
-<br>
-
-    <div class="mb-3">
-      <label for="description" class="form-label">Description</label>
-      <textarea class="form-control" placeholder="please describe your donation." id="floatingTextarea2" style="height: 60px" formControlName="description"></textarea>
-    </div>
-
-    <!-- <div class="form-floating">
-        <label for="floatingTextarea2" class="form-label" >Comments</label>
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
-       
-      </div> -->
+        </div> -->
+        
+          <div class="mb-3">
+            <label for="time" class="form-label">Time</label>
+            <input type="time" class="form-control" id="time" formControlName="time">
+          </div>
       
-        <div class="mb-3">
-          <label for="time" class="form-label">Time</label>
-          <input type="time" class="form-control" id="time" formControlName="time">
-        </div>
-    
-        <div class="mb-3">
-          <label for="date" class="form-label">Date</label>
-          <input type="date" class="form-control" id="date" formControlName="date">
-        </div>
-        <br>
-    
-        <div class="divBtn">
-            <button type="submit" class="btn btn-primary" [disabled]="DonationsForm.invalid">Submit</button>
-        </div>
-        
-      </form>
+          <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date" formControlName="date">
+          </div>
+          <br>
+      
+          <div class="divBtn">
+              <button type="submit" class="btn btn-primary" [disabled]="DonationsForm.invalid">Submit</button>
+          </div>
+          
+        </form>
 
+  </div>
 </div>
 
 

@@ -1,4 +1,4 @@
-<app-nav class="z-40"></app-nav>
+<app-nav></app-nav>
 
 
         <div class="row">
@@ -100,7 +100,7 @@
 
     <!-- </div> -->
       <!-- form card Register -->
-          <!-- <div class="formUpdate"> -->
+          <div class="formUpdate">
               <form class="form" id="form" *ngIf="isUpdating" [formGroup]="updateForm" (ngSubmit)="onUpdate(updateForm)">    
                   <div class="container-fluid mb-3 col-lg-8">
                     <label for="Name" class="form-label">First Name</label>
@@ -113,7 +113,7 @@
                   <div class="container-fluid mb-3 col-lg-8">
                     <label for="Surname" class="form-label">Last Name</label>
                     <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Surname" aria-describedby="addon-wrapping" formControlName="surname" placeholder="{{surname}}">
+                      <input type="text" class="form-control" aria-label="Surname" aria-describedby="addon-wrapping" formControlName="surname" placeholder="{{surname}}" required>
                       <span><i class="bi bi-person-fill"></i></span> 
                     </div>
                 </div>
@@ -143,7 +143,7 @@
               
           
           <!--/card-block-->
-      <!-- </div> -->
+      </div>
       <!-- /form card register -->
       <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
 
